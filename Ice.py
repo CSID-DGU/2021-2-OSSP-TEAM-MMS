@@ -161,7 +161,7 @@ class FontSize:
 
 
 class Sound:
-    m_sound = 0.1
+    m_sound = 0.06
     crash1_sound = 0.1
     crash2_sound = 0.1
     game_over_sound = 0.3
