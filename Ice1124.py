@@ -944,7 +944,7 @@ def restart():
     clock = pygame.time.Clock()
     #파이게임 배경음악
     pygame.mixer.init()
-    pygame.mixer.music.load("SourceCode/Sound/ariant.mp3")
+    pygame.mixer.music.load("SourceCode/Sound/Rien.mp3")
     # 미사일 효과음
     missile1 = pygame.mixer.Sound("SourceCode/Sound/weapon-sound8.ogg")
     missile1.set_volume(Sound.m_sound)
@@ -976,8 +976,8 @@ def restart():
     ss.move = Speed.s_speed
 
     # 게임의 배경화면 설정
-    background_image_desert = pygame.image.load("SourceCode/Image/DESERT.jpeg")
-    background_image_desert = pygame.transform.scale(background_image_desert,size) # 그림의 크기를 조정한다.
+    background_image_Ice = pygame.image.load("SourceCode/Image/Antartic.png")
+    background_image_Ice = pygame.transform.scale(background_image_Ice,size) # 그림의 크기를 조정한다.
 
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(Sound.background_sound)
@@ -1090,7 +1090,7 @@ def restart():
             # 미사일 객체 생성
             mm = obj()
             # 미사일의 사진
-            mm.put_img('SourceCode/Image/MISSILE_2.png')
+            mm.put_img('SourceCode/Image/ice_missile.png')
             # 미사일의 크기 조정
             # m_xsize = 5, m_ysize = 15
             mm.change_size(Size.m_xsize,Size.m_ysize)
@@ -1122,7 +1122,7 @@ def restart():
             missile1.stop()
             missile2.play()
             mm2 = obj()
-            mm2.put_img('SourceCode/Image/MISSILE_2.png')
+            mm2.put_img('SourceCode/Image/ice_missile.png')
             mm2.change_size(Size.m_xsize, Size.m_ysize)
             mm2.x = round(ss.x +(ss.sx * Size.half_split_num) / Size.third_split_num - mm.sx / Size.half_split_num)
             mm2.y = ss.y - mm2.sy - Util.m_loc_10
@@ -1161,7 +1161,7 @@ def restart():
         if random.random() > Speed.create_rate_c - (Util.score//Util.score_200)/Util.score_100:
             # 피사체 객체 생성
             aa = obj()
-            aa.put_img("SourceCode/Image/Scorphion.png")
+            aa.put_img("SourceCode/Image/penguin2-removebg-preview.png")
             # 피사체의 그림 크기 조정
             random_size = random.randint(Size.min_size,Size.max_size)
             # print("Size.min_size : {} Size.max_size : {} ss.x : {} ss.y : {} ss.sx : {} ss.sy : {} size : {} aa.sx : {} aa.sy : {}".format(Size.min_size, Size.max_size,ss.x,ss.y,ss.sx,ss.sy,size,aa.sx,aa.sy))
@@ -1180,7 +1180,7 @@ def restart():
         if random.random() > Speed.create_rate_r:
             # 장애물 객체 생성
             block = obj()
-            block.put_img('SourceCode/Image/Catus.png')
+            block.put_img('SourceCode/Image/ship.png')
             random_size = random.randint(Size.min_size,Size.block_max_size)
             block.change_size(random_size, random_size)
             # block.change_size(Size.block_size, Size.block_size)
@@ -1292,9 +1292,9 @@ def restart():
 
         # 4-4. 그리기 
         #  마우스에의해 창크기가 바뀜에 따라 배경화면 크기가 바뀜
-        background_image_desert = pygame.image.load("SourceCode/Image/DESERT.jpeg")
-        background_image_desert = pygame.transform.scale(background_image_desert, size)
-        screen.blit(background_image_desert, Util.start_loc)
+        background_image_Ice = pygame.image.load("SourceCode/Image/Antartic.png")
+        background_image_Ice = pygame.transform.scale(background_image_Ice, size)
+        screen.blit(background_image_Ice, Util.start_loc)
         
 
         # 비행체 보여주기
@@ -1306,7 +1306,7 @@ def restart():
         for a in Util.a_list:
             # print(a.sx,a.sy)
             if (a.sx > Size.err_x) or (a.sy > Size.err_y):
-                a.put_img("SourceCode/Image/Scorphion.png")
+                a.put_img("SourceCode/Image/penguin2-removebg-preview.png")
                 a.change_size(Size.standard_size,Size.standard_size)
             a.show()
         # 선인장 장애물 보여주기
@@ -1353,8 +1353,8 @@ def restart():
             d.close()
 
             
-        background_image_desert = pygame.transform.scale(background_image_desert, size)
-        screen.blit(background_image_desert, Util.start_loc)
+        background_image_desert = pygame.transform.scale(background_image_Ice, size)
+        screen.blit(background_image_Ice, Util.start_loc)
 
         FontSize.size_gameover = sum(size) // Resizing.size_gameover
         font = pygame.font.Font("SourceCode/Font/DXHanlgrumStd-Regular.otf", FontSize.size_gameover)
