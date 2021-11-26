@@ -675,10 +675,15 @@ while not SB:
 
     # 4-4. 그리기 
     #  마우스에의해 창크기가 바뀜에 따라 배경화면 크기가 바뀜
-    background_image_desert = pygame.image.load("SourceCode/Image/DESERT.jpeg")
-    background_image_desert = pygame.transform.scale(background_image_desert, size)
-    screen.blit(background_image_desert, Util.start_loc)
-    
+    if (Util.score < 50):
+        background_image_desert = pygame.image.load("SourceCode/Image/DESERT.jpeg")
+        background_image_desert = pygame.transform.scale(background_image_desert, size)
+        screen.blit(background_image_desert, Util.start_loc)
+
+    else:
+        background_image_desert = pygame.image.load("SourceCode/Image/DESERT2.png")
+        background_image_desert = pygame.transform.scale(background_image_desert, size)
+        screen.blit(background_image_desert, Util.start_loc)
 
     # 비행체 보여주기
     ss.show()
