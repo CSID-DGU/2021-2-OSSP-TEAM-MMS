@@ -4,7 +4,7 @@
 ## 게임소개
 <img width="360" height="400" alt="스크린샷 2021-12-02 오후 1 53 22" src="https://user-images.githubusercontent.com/81620424/144360234-3460173c-f663-4939-96a0-25479cb959d4.png">
 
-__슈팅게임__ : 키보드를 사용하여 미사일을 발사하고 장애물을 제거해나가며 점수를 쌓는 게임
+__슈팅게임__ : 키보드를 사용하여 미사일을 발사하고 장애물을 제거해며 점수를 쌓는 게임
 
 ## 조작방법
 <img width="360" height="400" alt="스크린샷 2021-12-02 오후 1 53 42" src="https://user-images.githubusercontent.com/81620424/144360536-096881a2-aabd-44c0-9d5f-3bb5a3f0c882.png">
