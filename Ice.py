@@ -366,9 +366,9 @@ ss.y = size[1] - ss.sy
 ss.move = Speed.s_speed
 
 # 게임의 배경화면 설정
-background_image_desert = pygame.image.load("SourceCode/Image/Antartic.png")
+background_image_ice = pygame.image.load("SourceCode/Image/Antartic.png")
 
-background_image_desert = pygame.transform.scale(background_image_desert,size) # 그림의 크기를 조정한다.
+background_image_ice = pygame.transform.scale(background_image_ice,size) # 그림의 크기를 조정한다.
 
 
 
@@ -684,16 +684,16 @@ while not SB:
 
 
     # 4-4. 그리기 
-    #  마우스에의해 창크기가 바뀜에 따라 배경화면 크기가 바뀜
+    #  현재 점수에 따라 배경화면이 바뀜
     if (Util.score< 50) :
-        background_image_desert = pygame.image.load("SourceCode/Image/Antartic.png")
-        background_image_desert = pygame.transform.scale(background_image_desert, size)
-        screen.blit(background_image_desert, Util.start_loc)
+        background_image_ice = pygame.image.load("SourceCode/Image/Antartic.png")
+        background_image_ice = pygame.transform.scale(background_image_ice, size)
+        screen.blit(background_image_ice, Util.start_loc)
 
     else :
-        background_image_desert = pygame.image.load("SourceCode/Image/Antartic2.jpg")
-        background_image_desert = pygame.transform.scale(background_image_desert, size)
-        screen.blit(background_image_desert, Util.start_loc)
+        background_image_ice = pygame.image.load("SourceCode/Image/Antartic2.jpg")
+        background_image_ice = pygame.transform.scale(background_image_ice, size)
+        screen.blit(background_image_ice, Util.start_loc)
 
     # 비행체 보여주기
     ss.show()
@@ -1353,7 +1353,7 @@ def restart():
             d.close()
 
             
-        background_image_desert = pygame.transform.scale(background_image_Ice, size)
+        background_image_ice = pygame.transform.scale(background_image_Ice, size)
         screen.blit(background_image_Ice, Util.start_loc)
 
         FontSize.size_gameover = sum(size) // Resizing.size_gameover
@@ -1394,8 +1394,8 @@ while Util.GO:
         d.close()
 
         
-    background_image_desert = pygame.transform.scale(background_image_desert, size)
-    screen.blit(background_image_desert, Util.start_loc)
+    background_image_ice = pygame.transform.scale(background_image_ice, size)
+    screen.blit(background_image_ice, Util.start_loc)
 
     FontSize.size_gameover = sum(size) // Resizing.size_gameover
     font = pygame.font.Font("SourceCode/Font/DXHanlgrumStd-Regular.otf", FontSize.size_gameover)

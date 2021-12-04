@@ -1,2 +1,0 @@
-"seyeol"
-fdfdfdfdfd
