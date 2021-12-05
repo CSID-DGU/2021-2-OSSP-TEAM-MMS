@@ -259,8 +259,8 @@ def crash2(a,b):
     else:
         return False
 
-def cal_score(kill):
-    Util.score = (Util.kill * Util.kill_score_cal)
+def cal_score(kill,loss):
+    Util.score = (Util.kill * Util.kill_score_cal - Util.loss * Util.loss_score_cal)
 
 def change_size_rate(size):
     
@@ -664,16 +664,8 @@ while not SB:
             SB = True
             Util.GO = True
 
-
-    # score 가 0 점이 되면 프로그램 종료
-    if Util.score < Util.end_point:
-        SB = True
-        Util.GO = True
-    
-
-
     # 4-4. 그리기 
-    #  현재 점수에 따라 배경화면이 바뀜
+    #  마우스에의해 창크기가 바뀜에 따라 배경화면 크기가 바뀜
     if (Util.score < 50):
         background_image_desert = pygame.image.load("SourceCode/Image/DESERT.jpeg")
         background_image_desert = pygame.transform.scale(background_image_desert, size)
@@ -703,7 +695,7 @@ while not SB:
     # 점수 산정
     # Util.score = (Util.kill*5 - Util.loss*8)
     # 점수산정을 메소드화 하였음
-    cal_score(Util.kill)
+    cal_score(Util.kill, Util.loss)
     font = pygame.font.Font("SourceCode/Font/DXHanlgrumStd-Regular.otf", FontSize.size_kill_loss)
     text_kill = font.render("Killed : {} Loss : {}  Score : {} HighScore : {}".format(Util.kill, Util.loss, Util.score, Util.highscore), True, Color.yellow) # 폰트가지고 랜더링 하는데 표시할 내용, True는 글자가 잘 안깨지게 하는 거임 걍 켜두기, 글자의 색깔
 
@@ -1043,7 +1035,6 @@ def restart():
             # 물체가 왼쪽 끝 경계값으로 이동하면 더이상 나가지 않게끔 만듬!
             # 배경이 뭐냐에 따라 달라질 듯 !
             if ss.x < Move.boundary:
-                # 더 이상 나가지 못하도록 0 으로 막아줌
                 ss.x = Move.boundary 
         # 오른쪽 방향키를 눌렀을 때
         elif Move.right_go == True:

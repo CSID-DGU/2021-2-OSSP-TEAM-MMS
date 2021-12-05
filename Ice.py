@@ -268,8 +268,8 @@ def crash2(a,b):
         return False
 
 
-def cal_score(kill):
-    Util.score = (Util.kill * Util.kill_score_cal)
+def cal_score(kill,loss):
+    Util.score = (Util.kill * Util.kill_score_cal - Util.loss * Util.loss_score_cal)
 
 
 def change_size_rate(size):
@@ -676,13 +676,6 @@ while not SB:
             Util.GO = True
 
 
-    # score 가 0 점이 되면 프로그램 종료
-    if Util.score < 0:
-        SB = True
-        Util.GO = True
-    
-
-
     # 4-4. 그리기 
     #  현재 점수에 따라 배경화면이 바뀜
     if (Util.score< 50) :
@@ -713,7 +706,7 @@ while not SB:
     # 점수 산정
     # Util.score = (Util.kill*5 - Util.loss*8)
     # 점수산정을 메소드화 하였음
-    cal_score(Util.kill)
+    cal_score(Util.kill, Util.loss)
     
     font = pygame.font.Font("SourceCode/Font/DXHanlgrumStd-Regular.otf", FontSize.size_kill_loss)
 
