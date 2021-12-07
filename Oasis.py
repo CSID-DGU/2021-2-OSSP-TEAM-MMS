@@ -672,7 +672,7 @@ while not SB:
         screen.blit(background_image_desert, Util.start_loc)
 
     else:
-        background_image_desert = pygame.image.load("SourceCode/Image/DESERT2.png")
+        background_image_desert = pygame.image.load("SourceCode/Image/DESERT2.jpg")
         background_image_desert = pygame.transform.scale(background_image_desert, size)
         screen.blit(background_image_desert, Util.start_loc)
     
